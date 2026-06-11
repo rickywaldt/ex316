@@ -8,3 +8,10 @@
 4. Create a VirtualMachineClone YAML.
 5. Apply the YAML.
 6. Run virtctl start <vm>.
+
+## Sealed clone from console
+
+After step 3 above:
+
+1. From the console click Actions > Clone.
+2. Optionally check "Start VM after creation", click Clone.
