@@ -18,9 +18,8 @@ After step 3 above:
 
 ## Clone a disk (DataVolume)
 
-1. Create a DataVolume YAML with source.pvc pointing to the source PVC.
-2. Run oc apply -f dv.yaml.
-3. Run oc get datavolume and wait for Succeeded.
-4. Stop the target VM: Actions > Stop.
-5. Go to Configuration > Storage > Add disk, select the cloned PVC, set interface to VirtIO, click Save.
-6. Start the VM: Actions > Start.
+1. Create a dv template ```oc get dv <dv-name> -o yaml > dv.yaml```.
+2. Edit the dv.yaml, then ```oc apply -f dv.yaml```.
+3. Stop the target VM from the console or cli.
+4. Click on Configuration > Storage > Add disk and select Volume with the cloned pvc and interface VirtIO.
+5. Start the VM.
