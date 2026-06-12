@@ -23,3 +23,13 @@ After step 3 above:
 3. Stop the target VM from the console or cli.
 4. Click on Configuration > Storage > Add disk and select Volume with the cloned pvc and interface VirtIO.
 5. Start the VM.
+
+## Lesson
+
+- Stop the VM, seal PVC, then clone (don't boot the VM, this will unseal the PVC).
+- Cloning without sealing inherits everything, including machine specific data.
+- Sealing modifies the PVC in place permanently.
+- Cloning is easier from the console than cli.Extract the VirtualMachineClone YAML manifest if needed.
+- Deleting a VM also deletes the rootdisk (DV + PVC) but not cloned (manually created) attached disk.
+- Deleting a DV will delete its PVC.
+- Disk size for clones must be equal or greater than source PVC size.
