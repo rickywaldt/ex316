@@ -19,3 +19,5 @@ Add the registry URL under "insecureRegistries" after running:
 ```oc edit hco kubevirt-hyperconverged -n openshift-cnv```
 
 Create secrets for private registries in the openshift-virtualization-os-images and openshift-cnv namespaces.
+
+Create a DataImportCron object with the registry url and secret from earlier. In the manifest YAML there is garbageCollect: Outdated; this will delete the temporary PVC after OpenShift Virtualization converts the PVC into a VolumeSnapshot.
