@@ -21,3 +21,13 @@ Add the registry URL under "insecureRegistries" after running:
 Create secrets for private registries in the openshift-virtualization-os-images and openshift-cnv namespaces.
 
 Create a DataImportCron object with the registry url and secret from earlier. In the manifest YAML there is garbageCollect: Outdated; this will delete the temporary PVC after OpenShift Virtualization converts the PVC into a VolumeSnapshot.
+
+## Create VM based on bootable image and instance type
+
+```virtctl create instancetype --name bla --cpu 2 --memory 4Gi | oc apply -f -```
+
+Download the QCOW2 with wget, for example.
+
+Create a bootable volume from the Console > Virtualization > Bootable Volume (from form).
+
+Create a VM from Console > Catalog > (The first option in the tab).
