@@ -17,3 +17,5 @@ Now we build and push the image to our registry.
 
 Add the registry URL under "insecureRegistries" after running:
 ```oc edit hco kubevirt-hyperconverged -n openshift-cnv```
+
+Create secrets for private registries in the openshift-virtualization-os-images and openshift-cnv namespaces.
