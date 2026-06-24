@@ -6,4 +6,4 @@ If you add a label to a vm.spec.template.metadata.labels, then don't forget to r
 
 ## Migrate VM to another node
 
-If you add a loadbalancer over ssh, then don't forget to migrate the vm to another node.
+If you add ssh over loadbalancer, then don't forget to migrate the vm to another node.
