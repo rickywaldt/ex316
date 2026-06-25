@@ -1,0 +1,3 @@
+# HyperConverged Operator (HCO)
+
+You install the OpenShift Virtualization Operator from the OperatorHub in the openshift-cnv project. Openshift-cnv stands for OpenShift Container Native Virtualization. This was the original name before it was rebranded to OpenShift Virtualization; the name changed, the project remained. The OpenShift Virtualization Operator is the HyperConverged Operator (HCO). This comes from HyperConverged Infrastructure (HCI), where computer, storage, networking is converged into a single platform. After you install the HCO, you need to create a HyperConverged CR, which will create all the sub components.
