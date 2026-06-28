@@ -23,3 +23,7 @@ The process is as follows:
 Velero backs up the K8s resources and packages them into a tar archive and uploads to object storage. This is the desired (spec) and actual (status) state as described in the resource definitions stored in etcd.
 
 So both the backed up resource definitions + the Data Mover gives a complete restorable disaster-proof backup
+
+## Label resources to include in the velero backup
+
+```oc label svc httpd app=hello-web```
