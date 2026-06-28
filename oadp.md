@@ -38,3 +38,9 @@ Create velero alias:
 ```alias velero='oc -n openshift-adp exec deployment/velero -c velero -it -- ./velero'```
 
 ```velero backup create first-save --from-schedule vm-backup -n openshift-adp```
+
+## Create restore
+
+Go to Operators > Installed Operators > OADP Operator > Restore and create restore from yaml.
+
+Under metadata: labels: velero.kubevirt.io/clear-mac-address: "true" and velero.kubevirt.io/generate-new-firmware-uuid: "true". Then under spec.backupName: first-save and spec.namespaceMapping: oadp-review: oadp-restore.
