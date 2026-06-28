@@ -31,3 +31,10 @@ So both the backed up resource definitions + the Data Mover gives a complete res
 ## Create schedule
 
 Select "openshift-adp" from the project dropdown (show all default), then go to Operators > Installed Operators > OADP Operator > Schedule and create schedule from form or yaml. Under spec: schedule: "0 7 * * *" for example, then under schedule.template.includedNamespaces: - oadp-review (this is an array). Then labelSelector.matchLabels: app: hello-web. 
+
+## Create backup
+
+Create velero alias:
+```alias velero='oc -n openshift-adp exec deployment/velero -c velero -it -- ./velero'```
+
+```velero backup create first-save --from-schedule vm-backup -n openshift-adp```
