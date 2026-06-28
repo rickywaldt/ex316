@@ -27,3 +27,7 @@ So both the backed up resource definitions + the Data Mover gives a complete res
 ## Label resources to include in the velero backup
 
 ```oc label svc httpd app=hello-web```
+
+## Create schedule
+
+Select "openshift-adp" from the project dropdown (show all default), then go to Operators > Installed Operators > OADP Operator > Schedule and create schedule from form or yaml. Under spec: schedule: "0 7 * * *" for example, then under schedule.template.includedNamespaces: - oadp-review (this is an array). Then labelSelector.matchLabels: app: hello-web. 
